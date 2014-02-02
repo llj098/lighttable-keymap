@@ -33,13 +33,19 @@
               "cmd-/" [:toggle-comment-selection]
 
               ;;Push parens left or right (Slurp)
-              "cmd-shift-9" [:paredit.grow.left]
-              "cmd-shift-0" [:paredit.grow.right]
+              "ctrl-shift-9" [:paredit.grow.left]
+              "ctrl-shift-0" [:paredit.grow.right]
 
               ;;Shrink parens inward (Barf)
-              "cmd-shift-." [:paredit.shrink.left]
-              "cmd-shift-," [:paredit.shrink.right]
+              "ctrl-shift-." [:paredit.shrink.left]
+              "ctrl-shift-," [:paredit.shrink.right]
 
+              ; paredit kill
+              "alt-d" [:paredit-plus.kill]
+              
+              ;Sexp killing backward
+              "alt-r" [:paredit-plus.splice-sexp-killing-backward]
+              
               ;;Eval the parent ( ... )
               "alt-enter" [(:paredit.select.parent "(")
                            :eval-editor-form
